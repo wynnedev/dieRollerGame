@@ -1,16 +1,14 @@
-#include <iostream>
+#include "game.hpp"
+#include "introstate.hpp"
 #include <ctime>
-#include "die.hpp"
-#include "dice.hpp"
+#include <iostream>
+
+
 int main() {
-    std::cout << "Program Started" << std::endl;
     srand((unsigned) time(0));
-    Die *die = new Die(10);
 
-    Dice *dice = new Dice(2, 6);
-    dice->RollDice();
-    dice->ShowDice(std::cout);
+    Game game;
+    game.Run();
 
-    std::cout << "Program Ended" << std::endl;
     return 0;
 }

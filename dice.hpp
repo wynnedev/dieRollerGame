@@ -12,6 +12,9 @@ public:
     Dice(int totalDie, int totalSides);
     void RollDice();
     void ShowDice(std::ostream &os) const;
+    int GetTotal() const;
+    bool operator>(const Dice& dice) const;
+    bool operator==(const Dice& dice) const;
 
 private:
     std::vector<Die> _dice;

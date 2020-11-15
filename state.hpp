@@ -5,13 +5,16 @@
 #ifndef DIEROLLERGAME_STATE_HPP
 #define DIEROLLERGAME_STATE_HPP
 
-
 class State {
 public:
-    virtual ~State() {}
-    virtual void handleInput(Game& game, Input input) {};
-    virtual void update(Game& game);
+    virtual void Init() = 0;
+    virtual void HandleInput() = 0;
+    virtual void Update() = 0;
+
+    virtual void Pause() {}
+    virtual void Resume() {}
 };
+
 
 
 #endif//DIEROLLERGAME_STATE_HPP

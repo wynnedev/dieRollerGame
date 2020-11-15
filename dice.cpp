@@ -12,6 +12,7 @@ Dice::Dice(int totalDie, int sides) : _total(0){
         _dice.push_back(newDie);
     }
 }
+
 void Dice::RollDice() {
     _total = 0;
     for( auto& die : _dice){
@@ -24,4 +25,15 @@ void Dice::ShowDice(std::ostream &os) const {
     for(auto& die : _dice){
         die.ShowDie(os);
     }
+
+    std::cout << "Total: " << _total << "\n\n";
+}
+bool Dice::operator>(const Dice &dice) const {
+    return this->_total > dice._total;
+}
+bool Dice::operator==(const Dice &dice) const {
+    return this->_total == dice._total;
+}
+int Dice::GetTotal() const {
+    return _total;
 }

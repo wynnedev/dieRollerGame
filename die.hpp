@@ -17,6 +17,7 @@ public:
     void ShowDie(std::ostream& os) const;
     void SetSides(int sides);
     int GetValue() const;
+    int operator+(const Die& die) const;
 
 private:
     int _sides;

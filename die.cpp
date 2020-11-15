@@ -20,3 +20,6 @@ void Die::ShowDie(std::ostream &os) const {
 int Die::GetValue() const {
     return _value;
 }
+int Die::operator+(const Die &die) const {
+    return die.GetValue() + this->GetValue();
+}
